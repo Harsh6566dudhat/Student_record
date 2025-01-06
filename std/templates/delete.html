@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Are you Sure to delete....</h1>
+<form method="POST">
+    {% csrf_token %}
+
+
+    <button type="submit">Confirm</button>
+</form><br><br><a href="{% url 'home' %}">
+    <button>Cancal</button> 
+ </a>
+
+
+
+{% endblock content %}

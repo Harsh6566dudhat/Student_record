@@ -1,0 +1,66 @@
+
+{% extends 'main.html' %}
+{% load static %}
+
+
+
+
+
+{% block content %}
+
+<h1 align="center" 
+style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Contact  page</h1>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="UI Fresh -  uifresh.net">
+    <link rel="icon" href="{% static 'https://uifresh.net/wp-content/uploads/2024/02/cropped-uifresh-favicon-new-1-32x32.png' %}" sizes="32x32">
+    <title>Contact Form Example 01 · uifresh.net</title>
+    <link rel="stylesheet" type="text/css" href="{% static './assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static './style.css' %}">
+</head>
+
+<body>
+    <section class="uf-contact-form-01 mx-auto">
+        <div class="container">
+            <div class="row justify-content-center bg-white rounded-4 shadow py-5 gx-5 px-lg-5">
+                <div class="col-md-6 text-center">
+                    <h2 class="uf-ct-01-text-primary text-uppercase fw-bold">Contact Us</h2>
+                    
+                    <img src="{% static 'plane.png' %}" alt="" class="uf-img-contact-form-01 pt-4 d-md-block d-none" style="width: 300px; height: 300px;">
+                </div>
+                <div class="col-md-6">
+                  <form method="POST">
+                    {% csrf_token %}
+  <div class="mb-3">
+    <label for="uf-imail" class="form-label" >Email address</label>
+    <input type="email" class="form-control" id="uf-imail" aria-describedby="emailHelp" name="email">
+    <div id="emailHelp" class="form-text uf-ct-01-text-primary">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="uf-iname" class="form-label">Your name</label>
+    <input type="text" class="form-control" id="uf-iname" name="name">
+  </div>
+  <div class="mb-3">
+  <label for="uf-itextarea" class="form-label">Your message</label>
+  <textarea class="form-control" id="uf-itextarea" rows="3" name="message"></textarea>
+</div>
+  <button type="submit" class="btn btn-lg uf-ct-01-btn-primary">Send Message</button>
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static './assets/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>
+
+
+
+
+
+{% endblock content %}
